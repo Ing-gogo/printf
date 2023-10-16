@@ -3,21 +3,21 @@
 void print_buffer(char buffer[], int buff_c);
 
 /**
- * _print - function of print
+ * _printf - function of print
  * @format: formatted string
  * Return: characters printed
  */
 int _printf(const char *format, ...)
 {
 	int a, print = 0, chars = 0;
-	int flags, width, precison, size, buff_c = 0;
-	va_list ig;
+	int flags, width, precision, size, buff_c = 0;
+	va_list kb;
 	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(ig, format);
+	va_start(kb, format);
 
 	for (a = 0; format && format[a] != '\0'; a++)
 	{
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			precision = get_precision(format, &a, ig);
 			size = get_size(format, &a);
 			++a;
-			print = handle_print(format, &a, ig, buffer,
+			print = handle_print(format, &a, kb, buffer,
 					flags, width, precision, size);
 			if (print == -1)
 				return (-1);
@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 		}
 	}
 	print_buffer(buffer, &buff_c);
-	va_end(ig);
+	va_end(kb);
 
 	return (chars);
 }
