@@ -1,6 +1,5 @@
 #include "main.h"
 
-/**printing characters**/
 
 /**
  * print_char - function that prints characters
@@ -21,7 +20,6 @@ int print_char(va_list ig, char buffer[], int flags, int width,
 					size));
 }
 
-/** printing a string **/
 /**
  * print_string - printing a string
  * @ig: arguments
@@ -76,7 +74,6 @@ int print_string(va_list ig, char buffer[], int flags,
 	return (write(1, str, len));
 }
 
-/** printing percentage sign **/
 
 /**
  * print_percent - printing a percent sign
@@ -101,7 +98,6 @@ int print_percent(va_list ig, char buffer[],
 	return (write(1, "%%", 1));
 }
 
-/** printing integers **/
 /**
  * print_int - prints integers
  * @ig: arguments
@@ -143,7 +139,6 @@ int print_int(va_list ig, char  buffer[], int flags,
 			       precision, size));
 }
 
-/** printing in binary **/
 /**
  * print_binary - printing unsigned number
  * @ig: arguments
@@ -168,7 +163,7 @@ int print_binary(va_list ig, char buffer[], int flags,
 	UNUSED(size);
 
 	b = va_arg(ig, unsigned int);
-	c = 2147483648; /* (2 ^ 31) */
+	c = 2147483648;
 	d[0] = b / c;
 	for (a = 1; a < 32; a++)
 	{

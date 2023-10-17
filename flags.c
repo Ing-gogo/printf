@@ -8,8 +8,6 @@
  */
 int get_flags(const char *format, int *a)
 {
-	/* - + 0 # '' */
-	/* 1 2 4 8 16 */
 
 	int e, f;
 	int flags = 0;
