@@ -38,6 +38,7 @@ int print_string(va_list ig, char buffer[], int flags,
 
 	UNUSED(buffer);
 	UNUSED(flags);
+	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
 
