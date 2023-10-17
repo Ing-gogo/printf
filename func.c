@@ -65,7 +65,7 @@ int print_string(va_list ig, char buffer[], int flags,
 		}
 		else
 		{
-			for (a  width - len; a > 0; a--)
+			for (a = width - len; a > 0; a--)
 				write(1, "", 1);
 			write(1, &str[0], len);
 			return (width);
@@ -118,15 +118,15 @@ int print_int(va_list ig, char  buffer[], int flags,
 
 	b = convert_size_number(b, size);
 
-	if (n == 0)
+	if (b == 0)
 		buffer[a--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
-	nbr = (unsigned long int b);
+	nbr = (unsigned long int)b;
 
 	if (b < 0)
 	{
-		nbr = (unsigned llong int)((-1) * b);
+		nbr = (unsigned long int)((-1) * b);
 		negative = 1;
 	}
 	while (nbr > 0)
@@ -170,7 +170,7 @@ int print_binary(va_list ig, char buffer[], int flags,
 		c /= 2;
 		d[a] = (b / c) % 2;
 	}
-	for (a = 0; sum = 0; x = 0; a < 32; a++)
+	for (a = 0; sum = 0, x = 0, a < 32; a++)
 	{
 		sum += d[a];
 		if (sum || a == 31)

@@ -11,7 +11,7 @@ int get_flags(const char *format, int *a)
 
 	int e, f;
 	int flags = 0;
-	const char g[] = {'-', '+', '0', '#', '', '\0'};
+	const char g[] = {'-', '+', '0', '#', ' ', '\0'};
 	const int h[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH,
 		F_SPACE, 0};
 

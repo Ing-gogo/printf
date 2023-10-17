@@ -54,9 +54,13 @@ int is_digit(char z)
 long int convert_size_number(long int nbr, int size)
 {
 	if (size == S_LONG)
+	{
 		return (nbr);
+	}
 	else if (size == S_SHORT)
+	{
 		return ((short)nbr);
+	}
 	return ((int)nbr);
 }
 

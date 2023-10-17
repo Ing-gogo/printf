@@ -80,7 +80,7 @@ int print_non_printable(va_list ig, char buffer[],
 }
 
 /**
- * print_reverse - Prints tring in reversed
+ * print_reverse - Prints string in reverse
  * @ig: arguments list
  * @buffer: array to handle print
  * @flags:  Counts active flags

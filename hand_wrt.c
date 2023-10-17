@@ -206,7 +206,7 @@ int write_pointer(char buffer[], int index, int len,
 				buffer[--index] = zz;
 			return (write(1, &buffer[index], len) + write(1, &buffer[3], a - 3));
 		}
-		else if (!(flags & F_MINUS) && padd == ' ')
+		else if (!(flags & F_MINUS) && y == ' ')
 		{
 			buffer[--index] = 'x';
 			buffer[--index] = '0';

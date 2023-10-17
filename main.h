@@ -8,8 +8,8 @@
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
-#define S_LONG2
-#define S_SHORT1
+#define S_LONG 2
+#define S_SHORT 1
 /**
  * struct format - struct operation
  * @format: string formatted
@@ -56,8 +56,8 @@ int print_hexadecimal(va_list ig, char buffer[],
 		int flags, int width, int precision, int size);
 int print_hexa_upper(va_list ig, char buffer[],
 		int flags, int width, int precison, int size);
-int print_hexa(va_list ig, char map[],
-		char buffer[], int flags, int width, int precison, int size);
+int print_hexa(va_list ig, char map[], char buffer[],
+		 int flags, char flag_c, int width, int precision, int size);
 
 int print_pointer(va_list ig, char buffer[],
 		int flags, int width, int precision, int size);
@@ -69,13 +69,13 @@ int print_reverse(va_list ig, char buffer[],
 		int flags, int width, int precision, int size);
 int get_flags(const char *format, int *a);
 int get_width(const char *format, int *a, va_list kb);
-int get_precison(const char *format, int *a, va_list kb);
+int get_precision(const char *format, int *a, va_list kb);
 int get_size(const char *format, int *a);
 
 int print_rot13string(va_list ig, char buffer[],
 		int flags, int width, int precision, int size);
 int handle_write_char(char z, char buffer[],
-		int flags, int width, init precision, int size);
+		int flags, int width, int precision, int size);
 int write_number(int positive, int index, char buffer[],
 		int flags, int width, int precision, int size);
 int write_num(int index, char buffer[], int flags,
@@ -95,7 +95,7 @@ int write_unsgnd(int negative, int index, char buffer[],
 int append_hexa_code(char, char[], int);
 int is_printable(char);
 int is_digit(char);
-long int conver_size_number(long int nbr, int size);
+long int convert_size_number(long int nbr, int size);
 long int convert_size_unsgnd(unsigned long int nbr, int size);
 
 #endif

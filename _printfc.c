@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_buffer(char buffer[], int buff_c);
+void print_buffer(char buffer[], int *buff_c);
 
 /**
  * _printf - function of print
@@ -26,15 +26,14 @@ int _printf(const char *format, ...)
 			buffer[buff_c++] = format[a];
 			if (buff_c == BUFF_SIZE)
 				print_buffer(buffer, &buff_c);
-			/*write(1, &format[a], 1); */
 			chars++;
 		}
 		else
 		{
 			print_buffer(buffer, &buff_c);
 			flags = get_flags(format, &a);
-			width = get_width(format, &a, ig);
-			precision = get_precision(format, &a, ig);
+			width = get_width(format, &a, kb);
+			precision = get_precision(format, &a, kb);
 			size = get_size(format, &a);
 			++a;
 			print = handle_print(format, &a, kb, buffer,
